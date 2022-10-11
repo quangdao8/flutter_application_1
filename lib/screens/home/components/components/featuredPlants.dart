@@ -1,31 +1,25 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/components/header_with_searchBox.dart';
-import 'package:flutter_application_1/components/title_with_more_btn.dart';
 import 'package:flutter_application_1/constants.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'recommend_plants.dart';
 
-class Body extends StatelessWidget {
-  const Body({super.key});
+class FeaturePlants extends StatelessWidget {
+  const FeaturePlants({
+    Key? key,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
     return SingleChildScrollView(
-      child: Column(
+      scrollDirection: Axis.horizontal,
+      child: Row(
         children: [
-          HeaderWithSearchBox(size: size),
-          TitleWithMoreBtn(
-            title: "Recommend",
+          FeaturePlantCard(
+            image: "assets/images/bottom_img_1.png",
             press: () {},
           ),
-          const RecommendPlants(),
-          TitleWithMoreBtn(title: "Featured Plants", press: () {}),
-          // Row(
-          //   children: [
-          //     FeaturePlantCard(image: "assets/images/bottom_img_1.png"),
-          //   ],
-          // ),
+          FeaturePlantCard(
+            image: "assets/images/bottom_img_2.png",
+            press: () {},
+          ),
         ],
       ),
     );
@@ -35,7 +29,8 @@ class Body extends StatelessWidget {
 class FeaturePlantCard extends StatelessWidget {
   const FeaturePlantCard({
     Key? key,
-    required this.image, required this.press,
+    required this.image,
+    required this.press,
   }) : super(key: key);
 
   final String image;
@@ -55,7 +50,8 @@ class FeaturePlantCard extends StatelessWidget {
         height: 185,
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(10),
-            image: DecorationImage(image: AssetImage(image))),
+            image:
+                DecorationImage(image: AssetImage(image), fit: BoxFit.cover)),
       ),
     );
   }

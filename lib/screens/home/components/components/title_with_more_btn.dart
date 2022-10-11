@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../constants.dart';
+import 'package:flutter_application_1/constants.dart';
 
 class TitleWithMoreBtn extends StatelessWidget {
   const TitleWithMoreBtn({
@@ -21,7 +21,7 @@ class TitleWithMoreBtn extends StatelessWidget {
           // ignore: prefer_const_constructors
           TitleWithCustomUnderline(text: title),
           const Spacer(),
-          TextButton(
+          TextButton(     
             onPressed: (() => press),
             style: TextButton.styleFrom(
                 backgroundColor: kPrimaryColor,
